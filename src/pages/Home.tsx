@@ -1,15 +1,64 @@
 import React from 'react';
+import { IconCloud } from "../components/magicui/icon-cloud";
+import { SmoothCursor } from "../components/ui/smooth-cursor";
+import { AnimatedCircularProgressBar } from "../components/magicui/animated-circular-progress-bar";
 
+ 
+const slugs = [
+  "typescript",
+  "javascript",
+  "java",
+  "react",
+  "html5",
+  "css3",
+  "vercel",
+  "git",
+  "github",
+  "visualstudiocode",
+  "figma",
+  "tailwindcss",
+  "mysql",
+    "csharp",
+    "cisco",
+    "wordpress",
+    "figma",
+    "typescript",
+      "git",
+  "github",
+  "javascript",
+  "java",
+  "react",
+  "html5",
+  "css3",
+    "vercel",
+    "audacity",
+    "googlegemini",
+    "php",
+    "phpmyadmin",
+  "codesandbox"
+];
+ 
 const Home: React.FC = () => { 
-
+const images = slugs.map(
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}` 
+  );
     return (
-        <div className="container mx-auto px-4 py-8">        
-            <h1 className="text-3xl font-bold mb-4">Welcome to My Portfolio</h1>
-            <p className="text-lg">
-                This is the home page of my portfolio website. Here you can find information about my projects, skills, and contact details.
-            </p>
-        </div>
-    );
-}
+       <section id="about" className="py-20 bg-white text-black dark:bg-black dark:text-white">
+        <div className="relative flex w-full h-[700px] max-w-screen-xl  ml-[300px] justify-end overflow-hidden ">
+                    <AnimatedCircularProgressBar
+                    max={100}
+                    min={0}
+                    value={75}
+                    gaugePrimaryColor="green    "
+                    gaugeSecondaryColor="gray"
+                />
+                <IconCloud images={images} />
+
+            </div>
+   
+            <SmoothCursor />
+       </section>
+    );  
+};
 
 export default Home;
