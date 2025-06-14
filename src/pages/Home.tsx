@@ -44,7 +44,7 @@ const images = slugs.map(
   );
     return (
        <section id="about" className="py-20 bg-white text-black dark:bg-black dark:text-white">
-        <div className="relative flex w-full h-[700px] max-w-screen-xl  ml-[300px] justify-end overflow-hidden ">
+        <div className="relative flex w-full h-[200px] sm:h-[700px] max-w-screen-xl ml-0 sm:ml-[300px] justify-end overflow-hidden">
                     <AnimatedCircularProgressBar
                     max={100}
                     min={0}
