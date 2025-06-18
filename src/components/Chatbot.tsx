@@ -142,7 +142,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
   }
 
   return (
-    <div className="p-4 border-t border-gray-200">
+    <div className="p-4 border-t border-gray-300">
       <div className="flex items-end gap-3">
         <div className="flex-1 relative">
           <textarea
@@ -152,7 +152,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
             onKeyDown={handleKeyDown}
             placeholder={disabled ? "Setup required..." : "Ask Jasper anything..."}
             disabled={disabled || isLoading}
-            className="w-full resize-none rounded-xl border-2 border-gray-200 px-4 py-3 pr-12 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 disabled:bg-gray-50 disabled:text-gray-500 max-h-24 transition-all duration-200"
+            className="w-full resize-none rounded-xl border-2 border-gray-300 bg-white text-black px-4 py-3 pr-12 text-sm focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 disabled:bg-gray-100 disabled:text-gray-500 max-h-24 transition-all duration-200 placeholder-gray-500"
             rows={1}
           />
 
@@ -160,7 +160,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
           <div className="absolute right-3 bottom-3 flex items-center gap-1">
             <button
               type="button"
-              className="p-1 text-gray-400 hover:text-gray-600 transition-colors mt-2"
+              className="p-1 text-gray-600 hover:text-black transition-colors mt-2"
               title="Add emoji"
               onClick={() => setShowPicker((v) => !v)}
             >
@@ -180,7 +180,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
         <button
           onClick={handleSubmit}
           disabled={!message.trim() || isLoading || disabled}
-          className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-center hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg"
+          className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-r from-black to-gray-800 text-white flex items-center justify-center hover:from-gray-900 hover:to-gray-700 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-110 active:scale-95 hover:rotate-12 shadow-lg hover:shadow-xl"
         >
           <Send size={18} />
         </button>
@@ -188,11 +188,12 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
       
       {/* Quick suggestions */}
       <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
-        {quickSuggestions.map((suggestion) => (
+        {quickSuggestions.map((suggestion, index) => (
           <button
             key={suggestion.text}
             onClick={() => setMessage(suggestion.text)}
-            className="flex-shrink-0 px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors duration-200 whitespace-nowrap"
+            className="flex-shrink-0 px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-black rounded-full transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-md animate-in slide-in-from-bottom-2 fade-in"
+            style={{animationDelay: `${index * 100}ms`}}
             disabled={isLoading}
           >
             {suggestion.emoji} {suggestion.text}
@@ -206,7 +207,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
 const Chatbot: React.FC<ChatbotProps> = ({
   apiKey = import.meta.env.VITE_GEMINI_API_KEY,
   position = 'bottom-right',
-  primaryColor = 'bg-blue-600'
+  primaryColor = 'bg-black'
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -418,9 +419,9 @@ Respond as Jasper:`;
     <div className={`fixed ${positionClasses} z-50`}>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-145 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden z-50">
+        <div className="fixed bottom-24 right-6 w-80 h-145 bg-white rounded-2xl shadow-2xl border border-gray-300 flex flex-col overflow-hidden z-50 animate-in slide-in-from-bottom-4 slide-in-from-right-4 duration-300 fade-in zoom-in-95">
           {/* Header - Fixed */}
-          <div className={`${primaryColor} text-white p-4 flex items-center justify-between flex-shrink-0`}>
+          <div className={`${primaryColor} text-white p-4 flex items-center justify-between flex-shrink-0 animate-in slide-in-from-top-2 duration-200 delay-100`}>
             <div className="flex items-center space-x-2">
               <Bot size={20} />
               <h3 className="font-semibold">Jasper AI</h3>
@@ -428,23 +429,23 @@ Respond as Jasper:`;
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 rounded-full p-1 transition-colors flex-shrink-0"
+              className="hover:bg-white/20 rounded-full p-1 transition-all duration-300 hover:scale-110 hover:rotate-90 flex-shrink-0"
             >
               <X size={18} />
             </button>
           </div>
 
           {/* Messages - Scrollable */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
-                <div className={`flex items-start space-x-2 max-w-xs ${message.isUser ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${message.isUser ? 'bg-gray-600' : 'bg-blue-100'}`}>
-                    {message.isUser ? <User size={16} className="text-white" /> : <Bot size={16} className="text-blue-600" />}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 animate-in fade-in duration-300 delay-200">
+            {messages.map((message, index) => (
+              <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} animate-in slide-in-from-bottom-2 fade-in duration-300`} style={{animationDelay: `${index * 50}ms`}}>
+                <div className={`flex items-start space-x-2 max-w-xs ${message.isUser ? 'flex-row-reverse space-x-reverse' : ''} group`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${message.isUser ? 'bg-black' : 'bg-gray-800'} transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}>
+                    {message.isUser ? <User size={16} className="text-white" /> : <Bot size={16} className="text-white" />}
                   </div>
-                  <div className={`rounded-lg p-3 ${message.isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800'}`}>
+                  <div className={`rounded-lg p-3 ${message.isUser ? 'bg-black text-white' : 'bg-gray-100 text-black'} transition-all duration-300 hover:shadow-md hover:scale-105 hover:-translate-y-1`}>
                     <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                    <p className={`text-xs mt-1 ${message.isUser ? 'text-blue-100' : 'text-gray-500'}`}>
+                    <p className={`text-xs mt-1 ${message.isUser ? 'text-gray-300' : 'text-gray-600'}`}>
                       {formatTime(message.timestamp)}
                     </p>
                   </div>
@@ -452,16 +453,16 @@ Respond as Jasper:`;
               </div>
             ))}
             {isLoading && (
-              <div className="flex justify-start">
+              <div className="flex justify-start animate-in slide-in-from-left-4 fade-in duration-500">
                 <div className="flex items-start space-x-2 max-w-xs">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Bot size={16} className="text-blue-600" />
+                  <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot size={16} className="text-white" />
                   </div>
                   <div className="bg-gray-100 rounded-lg p-3">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" />
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
+                      <div className="w-2 h-2 bg-black rounded-full animate-bounce" />
+                      <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
+                      <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
                     </div>
                   </div>
                 </div>
@@ -471,7 +472,7 @@ Respond as Jasper:`;
           </div>
 
           {/* Input - Fixed */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 animate-in slide-in-from-bottom-2 duration-300 delay-300">
             <ChatInput 
               onSendMessage={handleSendMessage}
               isLoading={isLoading}
@@ -481,13 +482,58 @@ Respond as Jasper:`;
         </div>
       )}
 
-      {/* Chat Toggle Button - Fixed */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`${primaryColor} text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex-shrink-0`}
-      >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
-      </button>
+      {/* Enhanced Chat Toggle Button with Synchronized Glowing Effects */}
+      <div className="relative">
+        {/* Outer glow rings - all synced to bounce */}
+       
+        
+        {/* Main button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`relative ${primaryColor} text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-125 active:scale-90 flex-shrink-0 transform ${
+            !isOpen 
+              ? 'hover:rotate-180 animate-bounce hover:animate-none shadow-2xl shadow-blue-500/20' 
+              : 'hover:rotate-180'
+          } ${
+            !isOpen 
+              ? 'bg-gradient-to-r from-gray-900 via-black to-gray-900 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600' 
+              : ''
+          }`}
+          style={{
+            ...((!isOpen) && {
+              boxShadow: '0 0 40px rgba(59, 130, 246, 0.4), 0 0 80px rgba(147, 51, 234, 0.3), 0 0 120px rgba(236, 72, 153, 0.2)',
+            })
+          }}
+        >
+          {/* Inner glow effect that bounces */}
+          {!isOpen && (
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 blur-sm animate-bounce" 
+                 style={{animationDelay: '0.05s'}} />
+          )}
+          
+          {/* Icon with glow */}
+          <div className={`relative z-10 ${!isOpen ? 'drop-shadow-lg' : ''}`}>
+            {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+          </div>
+          
+          {/* Sparkle effects that bounce in sync */}
+          {!isOpen && (
+            <>
+              <div className="absolute top-2 right-2 w-1 h-1 bg-white rounded-full animate-bounce" 
+                   style={{animationDelay: '0.4s'}} />
+              <div className="absolute bottom-3 left-2 w-0.5 h-0.5 bg-blue-300 rounded-full animate-bounce" 
+                   style={{animationDelay: '0.6s'}} />
+              <div className="absolute top-3 left-3 w-0.5 h-0.5 bg-purple-300 rounded-full animate-bounce" 
+                   style={{animationDelay: '0.8s'}} />
+              <div className="absolute bottom-2 right-3 w-0.5 h-0.5 bg-pink-300 rounded-full animate-bounce" 
+                   style={{animationDelay: '1s'}} />
+            </>
+          )}
+        </button>
+        
+      
+  
+      </div>
     </div>
   );
 };

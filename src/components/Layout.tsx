@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar.tsx';
 import Footer from './Footer.tsx';
 import Chatbot from './Chatbot.tsx';
+import { SmoothCursor } from "../components/ui/smooth-cursor";
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -15,6 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       <Chatbot />
       <Footer />
+       <SmoothCursor />
     </div>
   );
 };

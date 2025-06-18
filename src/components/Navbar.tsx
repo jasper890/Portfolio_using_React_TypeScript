@@ -2,14 +2,69 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
-            <div className="text-lg font-semibold">My Portfolio</div>
-            <img src="" alt="" />
-            <ul className="flex space-x-4">
-                <li><a href="#about" className="hover:text-blue-500">About</a></li>
-                <li><a href="#projects" className="hover:text-blue-500">Projects</a></li>
-                <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
-            </ul>
+        <nav className="bg-[#161313] text-white py-5 px-6 flex justify-between items-center">
+
+            <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
+                <span 
+                    className="inline-block font-black tracking-tight italic"
+                    style={{ 
+                        fontFamily: '"Open Sans", sans-serif',
+                        fontWeight: 800,
+                        fontStyle: 'italic',
+                        color: 'white'
+                    }}
+                >
+                    JRN
+                </span>
+                <span 
+                    className="inline-block mx-1 font-thin"
+                    style={{ 
+                        fontFamily: 'Roboto, sans-serif',
+                        fontWeight: 100,
+                        color: 'white'
+                    }}
+                >
+                    |
+                </span>
+                <span 
+                    className="inline-block font-thin tracking-wide italic"
+                    style={{ 
+                        fontFamily: 'Roboto, sans-serif',
+                        fontWeight: 100,
+                        fontStyle: 'italic',
+                        color: 'white'
+                    }}
+                >
+                    DEV
+                </span>
+            </div>
+           <ul className="flex space-x-4">
+  <li>
+    <a 
+      href="#about" 
+      className="text-lg text-white hover:text-cyan-400 text-glow-cyan transition-all duration-300"
+    >
+      About
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#projects" 
+      className="text-lg text-white hover:text-amber-300 text-glow-amber transition-all duration-300"
+    >
+      Projects
+    </a>
+  </li>
+  <li>
+    <a 
+      href="#contact" 
+      className="text-lg text-white hover:text-lime-300 text-glow-lime transition-all duration-300"
+    >
+      Contact
+    </a>
+  </li>
+</ul>
+
         </nav>
     );
 
