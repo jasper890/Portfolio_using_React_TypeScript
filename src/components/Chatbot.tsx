@@ -18,6 +18,7 @@ interface ChatInputProps {
   onSendMessage: (message: string) => void;
   isLoading: boolean;
   disabled?: boolean;
+  autoFocus?: boolean;
 }
 
 // Enhanced training data - Add more about yourself here
@@ -80,7 +81,7 @@ I'm always open to discussing new projects, collaborations, or just chatting abo
   ]
 };
 
-const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disabled }) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disabled, autoFocus = false }) => {
   const [message, setMessage] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -88,6 +89,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
     if (message.trim() && !isLoading && !disabled) {
       onSendMessage(message);
       setMessage('');
+      // Refocus after sending message
+      setTimeout(() => {
+        textareaRef.current?.focus();
+      }, 100);
     }
   };
 
@@ -97,6 +102,24 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
       handleSubmit();
     }
   };
+
+  // Auto-focus effect
+  useEffect(() => {
+    if (autoFocus && textareaRef.current && !disabled && !isLoading) {
+      textareaRef.current.focus();
+    }
+  }, [autoFocus, disabled, isLoading]);
+
+  // Maintain focus when chat opens or messages change
+  useEffect(() => {
+    if (autoFocus && textareaRef.current && !disabled) {
+      const focusTimeout = setTimeout(() => {
+        textareaRef.current?.focus();
+      }, 300); // Small delay to ensure DOM is ready
+      
+      return () => clearTimeout(focusTimeout);
+    }
+  }, [autoFocus, disabled]);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -140,6 +163,14 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
       textarea.selectionStart = textarea.selectionEnd = pos;
     }, 0);
   }
+
+  const handleSuggestionClick = (suggestionText: string) => {
+    setMessage(suggestionText);
+    // Focus back to textarea after clicking suggestion
+    setTimeout(() => {
+      textareaRef.current?.focus();
+    }, 100);
+  };
 
   return (
     <div className="p-4 border-t border-gray-300">
@@ -191,7 +222,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
         {quickSuggestions.map((suggestion, index) => (
           <button
             key={suggestion.text}
-            onClick={() => setMessage(suggestion.text)}
+            onClick={() => handleSuggestionClick(suggestion.text)}
             className="flex-shrink-0 px-3 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-black rounded-full transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-md animate-in slide-in-from-bottom-2 fade-in"
             style={{animationDelay: `${index * 100}ms`}}
             disabled={isLoading}
@@ -228,6 +259,31 @@ const Chatbot: React.FC<ChatbotProps> = ({
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Global keydown listener for auto-focus when chat is open
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (isOpen && !isLoading) {
+        // Check if we're not already focused on an input element
+        const activeElement = document.activeElement;
+        const isInputFocused = activeElement?.tagName === 'INPUT' || 
+                              activeElement?.tagName === 'TEXTAREA' || 
+                              activeElement?.getAttribute('contenteditable') === 'true';
+        
+        // If not focused on input and it's a printable character, focus the textarea
+        if (!isInputFocused && e.key.length === 1 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+          const textarea = document.querySelector('textarea[placeholder*="Ask Jasper"]') as HTMLTextAreaElement;
+          if (textarea) {
+            textarea.focus();
+            // Don't prevent default so the character gets typed
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleGlobalKeyDown);
+    return () => document.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [isOpen, isLoading]);
 
   // Enhanced function to find relevant responses
   const findRelevantResponse = (message: string): string | null => {
@@ -477,6 +533,7 @@ Respond as Jasper:`;
               onSendMessage={handleSendMessage}
               isLoading={isLoading}
               disabled={false}
+              autoFocus={isOpen}
             />
           </div>
         </div>
@@ -531,8 +588,7 @@ Respond as Jasper:`;
           )}
         </button>
         
-      
-  
+       
       </div>
     </div>
   );
