@@ -36,11 +36,12 @@ const HomeFirstLandProfile = () => {
             <BoxReveal boxColor={"#22d3ee"} duration={0.5}>
               <div className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
                 <p>
-                  I craft clean, efficient web applications using React, TypeScript, and Tailwind CSS. <br className="hidden sm:block" />
-                  Constantly learning new technologies and improving my skills. <br className="hidden sm:block" />
-                  Focused on creating smooth user experiences with clean code. <br className="hidden sm:block" />
-                  Let's build something great together.
-                </p>
+  I build clean, efficient web apps using React, TypeScript, and Tailwind CSS.<br className="hidden sm:block" />
+  Always learning and focused on smooth, minimalist user experiences.<br className="hidden sm:block" />
+  Experienced in AI chatbots, workflows, and intuitive UIs.<br className="hidden sm:block" />
+  I quietly refine my craft and build with intention and clarity.
+</p>
+
               </div>
             </BoxReveal>
           </div>
