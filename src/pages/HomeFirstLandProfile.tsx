@@ -1,63 +1,53 @@
-import personalProfile from "../assets/jasperImageForPort.png";
+
+import personalProfile from "../assets/portfoliopic.png";
 import { BoxReveal } from "../components/magicui/box-reveal";
 
 const HomeFirstLandProfile = () => {
   return (
-      <section className="bg-black text-white">
- <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full blur-[180px] pointer-events-none z-0 animate-float-glow" />
-      {/* Terminal Content */}
-      <div className="relative z-10 p-8 text-xl text-center max-w-2xl"></div>
-      {/* Grid Section */}
-      <div className="grid grid-cols-4 h-screen">
-        {/* Image Section */}
-              <div className="col-span-2 ">
-                  <div className="ml-10 pl-20 w-full h-full relative">
-                      <img
-            src={personalProfile}
-            alt="Jasper's profile"
-            className="w-full h-full object-cover -mt-30 "
-          />
-                  </div>
-          
+    <section className="relative bg-black text-white min-h-screen md:min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Floating Glow */}
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full blur-[160px] bg-cyan-500 opacity-70 z-0 animate-float-glow" />
+
+      <div className="relative z-10 container mx-auto  max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:min-h-screen">
+          {/* Image Section - Mobile: Top, Desktop: Left */}
+          <div className="flex justify-center items-center order-1 md:order-1">
+            <img
+              src={personalProfile}
+              alt="Jasper's profile"
+              className="w-full max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-[10000px] 2xl:max-w-[10000px] shadow-2xl rounded-lg"
+            />
+          </div>
+
+          {/* Text Section - Mobile: Bottom, Desktop: Right */}
+          <div className="flex flex-col justify-start md:justify-center items-start space-y-6 order-2 md:order-2 text-center md:text-left mt-8 md:mt-0">
+            <BoxReveal boxColor={"#14b8a6"} duration={0.5}>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+                Hi, I'm Jasper<span className="text-[#22d3ee]">.</span>
+              </p>
+            </BoxReveal>
+
+            <BoxReveal boxColor={"#14b8a6"} duration={0.5}>
+              <h2 className="text-lg sm:text-xl md:text-2xl text-gray-300">
+                A Quiet Builder Passionate About Coding
+              </h2>
+            </BoxReveal>
+
+            <BoxReveal boxColor={"#22d3ee"} duration={0.5}>
+              <div className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
+                <p>
+                  I craft clean, efficient web applications using React, TypeScript, and Tailwind CSS. <br className="hidden sm:block" />
+                  Constantly learning new technologies and improving my skills. <br className="hidden sm:block" />
+                  Focused on creating smooth user experiences with clean code. <br className="hidden sm:block" />
+                  Let's build something great together.
+                </p>
+              </div>
+            </BoxReveal>
+          </div>
         </div>
-
-        {/* Text Section */}
-              <div className="col-span-2 flex flex-col items-start justify-center p-8 space-y-6 bg-black ">
-                  <div className="ml-10 pl-20">
-                      
-                     <BoxReveal boxColor={"#14b8a6"} duration={0.5}>
-    <p className="text-[3.5rem] font-semibold text-white">
-      Hi, I’m Jasper<span className="text-[#22d3ee]">.</span>
-    </p>
-  </BoxReveal>
-
-  <BoxReveal boxColor={"#14b8a6"} duration={0.5}>
-    <h2 className="text-[1.2rem] text-gray-300">
-      A Quiet Builder Passionate About Coding
-    </h2>
-  </BoxReveal>
-
-  <BoxReveal boxColor={"#22d3ee"} duration={0.5}>
-    <div className="text-gray-400 text-base max-w-lg leading-relaxed">
-      <p>
-        I craft clean, efficient web applications using React, TypeScript, and Tailwind CSS. <br />
-        Constantly learning new technologies and improving my skills. <br />
-        Focused on creating smooth user experiences with clean code. <br />
-        Let’s build something great together.
-      </p>
-    </div>
-  </BoxReveal> 
-                  </div>
-  
-</div>
-
-
       </div>
-
-     
-     
     </section>
-  )
-}
+  );
+};
 
-export default HomeFirstLandProfile
+export default HomeFirstLandProfile;
