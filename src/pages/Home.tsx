@@ -1,9 +1,12 @@
-
-
+import FirstPage from "./HomeFirstLandProfile"
+import SecondPage from "./HomePage_2"
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <FirstPage />
+      <SecondPage />
+    </>
+  );
+};
 
-export default Home
+export default Home;

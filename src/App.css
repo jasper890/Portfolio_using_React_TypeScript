@@ -127,3 +127,46 @@
 .text-glow-lime:hover {
   text-shadow: 0 0 6px #a3e635, 0 0 10px #a3e635, 0 0 15px #a3e635;
 }
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0);
+    background-color: rgba(168, 85, 247, 0.5); /* purple-500 */
+  }
+  25% {
+    transform: translate(40px, -20px);
+    background-color: rgba(236, 72, 153, 0.5); /* pink-500 */
+  }
+  50% {
+    transform: translate(-30px, 30px);
+    background-color: rgba(59, 130, 246, 0.5); /* blue-500 */
+  }
+  75% {
+    transform: translate(20px, -40px);
+    background-color: rgba(34, 211, 238, 0.5); /* cyan-400 */
+  }
+  100% {
+    transform: translate(0, 0);
+    background-color: rgba(168, 85, 247, 0.5); /* back to purple */
+  }
+}
+
+.animate-float-glow {
+  animation: floatGlow 12s infinite ease-in-out;
+}

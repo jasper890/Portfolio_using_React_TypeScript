@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="bg-[#161313] text-white py-5 px-6 flex justify-between items-center">
+        <nav className="bg-[#161313] text-white py-5 px-6 flex justify-between items-center z-50">
 
             <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
                 <span 
