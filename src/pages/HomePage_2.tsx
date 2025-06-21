@@ -5,12 +5,22 @@ import {
 } from "../components/magicui/terminal";
 import { useInView } from "react-intersection-observer";
 import { TextAnimate } from "../components/magicui/text-animate";
-
+import { MorphingText } from "../components/magicui/morphing-text";
 const HomePage_2 = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+const texts = [
+  "Developer",
+  "Coder",
+  "Creator",
+  "Maker",
+  "Programmer",
+  "Craftsman",
+  "Technologist",
+  "Innovator",
+];
 
   return (
     <section className="relative bg-black text-black min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-16 overflow-hidden">
@@ -84,11 +94,14 @@ const HomePage_2 = () => {
 
         {/* Right Column - Text Animation */}
         <div className="text-white text-3xl flex flex-col justify-center lg:justify-start space-y-6">
-          <div className="text-[3.5rem] font-black">
- <TextAnimate animation="blurInUp" by="word" delay={1}>
-  &gt; About This Builder
-</TextAnimate>
-          </div>
+         <div className="text-[3.5rem] font-black flex flex-wrap items-center space-x-2">
+  <TextAnimate animation="blurInUp" by="word" delay={1}>
+    &gt; About This
+  </TextAnimate>
+  <span className="inline-block -mb-10 opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.5s_forwards]">
+    <MorphingText texts={texts} />
+  </span>
+</div>
 
           <div className="font-mono font-light leading-snug text-[20px] ">
             <TextAnimate animation="blurInUp" by="character" delay={1.5}>

@@ -170,3 +170,12 @@
 .animate-float-glow {
   animation: floatGlow 12s infinite ease-in-out;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
