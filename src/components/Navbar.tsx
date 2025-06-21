@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            console.log('Scroll position:', scrollPosition, 'isScrolled:', scrollPosition > 10);
+            
+            if (scrollPosition > 10) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+    console.log('Current state - isScrolled:', isScrolled);
+
     return (
-        <nav className="sticky top-0 bg-[#161313] text-white py-5 px-6 flex justify-between items-center z-50 shadow-[0_4px_20px_rgba(255,255,255,0.1)]">
+        <nav className={`fixed top-0 w-full text-white py-5 px-6 flex justify-between items-center z-50 transition-all duration-500 ${
+            isScrolled 
+                ? 'bg-[#161313] shadow-[0_4px_20px_rgba(255,255,255,0.1)]' 
+                : 'bg-transparent'
+        }`}>
 
             <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
                 <span 

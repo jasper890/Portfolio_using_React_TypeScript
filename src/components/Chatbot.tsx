@@ -57,11 +57,15 @@ I'm always open to discussing new projects, collaborations, or just chatting abo
     
     'goals': "My goal is to become an expert full-stack developer and contribute to meaningful AI projects. I want to build applications that make people's lives easier and eventually start my own tech company. Continuous learning is key!",
     
-    'experience': "I've been developing for a months now, starting with basic HTML/CSS and gradually mastering modern frameworks like React. I've worked on both personal and client projects, always focusing on clean, maintainable code.",
-    
+    'experience': "I began my development journey in senior high school using MIT App Inventor to build NFC-based attendance systems. Since then, I have expanded my skills to HTML, CSS, and modern frameworks like React. My projects include developing the Renalink Nephrology Center website, integrating AI chatbots with training, and creating applications using PowerApps. Currently, I’m an intern developer at Devonshire Wessex in the UK, where I contribute to software development and AI integration while gaining professional experience.",
+
     'why programming': "I fell in love with programming because it lets me create solutions to real problems. There's something magical about writing code that actually helps people or makes their lives easier. Plus, the constant learning keeps me excited!",
     
-    'advice': "My advice for new developers: start with the basics, build lots of projects, don't be afraid to fail, and always keep learning. The tech world moves fast, but that's what makes it exciting! Also, find a supportive community - it makes all the difference."
+    'advice': "My advice for new developers: start with the basics, build lots of projects, don't be afraid to fail, and always keep learning. The tech world moves fast, but that's what makes it exciting! Also, find a supportive community - it makes all the difference.",
+
+    'tech_stack': "My tech stack includes HTML, CSS, JavaScript, React, PHP, MySQL, MIT App Inventor for NFC systems, PowerApps, and AI technologies for chatbot integration and training."
+
+
   },
   
   // Conversation starters and context
@@ -77,7 +81,35 @@ I'm always open to discussing new projects, collaborations, or just chatting abo
     {
       user: "What's the hardest part about being a developer?",
       jasper: "Honestly, keeping up with all the new technologies can be overwhelming sometimes! But I've learned to focus on fundamentals and gradually adopt new tools. Debugging can also be frustrating, but that 'aha!' moment when you solve a tough problem makes it all worth it."
-    }
+    },{
+  user: "What are your experiences in software development and AI?",
+  jasper: "I've worked on diverse projects ranging from NFC-based attendance systems to website development like the Renalink Nephrology Center. Beyond traditional development, I specialize in integrating artificial intelligence and chatbots into digital solutions. I’ve also trained AI models to improve chatbot responses and functionality, blending software engineering with AI to create smarter, more interactive tools. Currently, I’m an intern at Devonshire Wessex in the UK, where I continue to expand my skills in both development and AI."
+},
+{
+  user: "What is your current job role?",
+  jasper: "I’m currently an intern developer at Devonshire Wessex in the UK. My role involves software development, AI integration, and chatbot training — helping build intelligent digital solutions while collaborating with teams and learning industry best practices."
+    },
+{
+  user: "What was your role in the NFC attendance system project?",
+  jasper: "I developed the core logic to read and write NFC tags using Android Studio, ensuring seamless and secure attendance tracking. It was rewarding to combine hardware and software to build a practical solution for real-world problems."
+},
+{
+  user: "Can you tell me about your work with the Renalink Nephrology Center website?",
+  jasper: "Absolutely! I designed and developed a clean, user-friendly website using React and Tailwind CSS, focusing on a cozy and welcoming design with soft tones to match the center's brand. The site includes features like appointment booking and information about dialysis services."
+},
+{
+  user: "What challenges did you face while working on Renalink's online scheduling system?",
+  jasper: "One of the toughest parts was ensuring data security and privacy for patient information while maintaining a smooth user experience. I implemented validation and secure database queries with PHP and MySQL to protect sensitive data."
+},
+{
+  user: "How do you approach learning new technologies for your projects?",
+  jasper: "I focus on understanding the fundamentals deeply, then gradually experiment with new tools by building small projects or features. This approach helps me stay adaptable without getting overwhelmed."
+},
+{
+  user: "What makes your approach to development unique?",
+  jasper: "I’m a quiet builder who values simplicity and functionality. Instead of flashy features, I focus on creating clean, efficient, and maintainable code that solves real problems quietly but effectively."
+}
+
   ]
 };
 
@@ -137,7 +169,9 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading, disable
     { text: 'Hobbies', emoji: '🎮' },
     { text: 'Goals', emoji: '🎯' },
     { text: 'Why programming?', emoji: '💻' },
+    { text: 'Tech Stack', emoji: '🪛' },
     { text: 'Experience', emoji: '💼' },
+    
    
   ];
   const [showPicker, setShowPicker] = useState(false);

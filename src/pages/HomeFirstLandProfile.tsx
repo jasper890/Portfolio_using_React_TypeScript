@@ -6,7 +6,7 @@ const HomeFirstLandProfile = () => {
   return (
     <section className="relative bg-black text-white min-h-screen md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Floating Glow */}
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full blur-[160px] bg-cyan-500 opacity-70 z-0 animate-float-glow" />
+      <div className="absolute top-70 left-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full blur-[160px] bg-cyan-500 opacity-70 z-0 animate-float-glow" />
 
       <div className="relative z-10 container mx-auto  max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:min-h-screen">
