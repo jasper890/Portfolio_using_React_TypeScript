@@ -22,13 +22,12 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
-
     console.log('Current state - isScrolled:', isScrolled);
 
     return (
         <nav className={`fixed top-0 w-full text-white py-5 px-6 flex justify-between items-center z-50 transition-all duration-500 ${
             isScrolled 
-                ? 'bg-[#161313] shadow-[0_4px_20px_rgba(255,255,255,0.1)]' 
+                ? 'bg-white/8 backdrop-blur-2xl shadow-2xl shadow-black/40 before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/15 before:via-white/5 before:to-transparent before:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/10 after:to-transparent after:pointer-events-none' 
                 : 'bg-transparent'
         }`}>
 
