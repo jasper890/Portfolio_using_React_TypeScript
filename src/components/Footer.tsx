@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="flex-shrink-0 relative">
               <div className="absolute inset-0 bg-white/2 rounded-lg blur-sm"></div>
               <div className="relative text-white leading-none text-lg sm:text-xl md:text-2xl lg:text-3xl px-2 py-1" style={{ letterSpacing: '-0.02em' }}>
-                  <Link to="/home">
+                  <Link to="/">
                 <span 
                   className="inline-block font-black tracking-tight italic drop-shadow-lg"
                   style={{ 

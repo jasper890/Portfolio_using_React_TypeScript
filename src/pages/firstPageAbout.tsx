@@ -54,13 +54,31 @@ const images = slugs.map(
   );
     return (
  <section id="about" className="py-20 bg-transparent text-white dark:bg-black dark:text-white w-full relative">
-        <div className="absolute top-[30%] right-48 w-[200px] h-[250px] sm:w-[300px] sm:h-[300px] rounded-full blur-[200px] pointer-events-none z-0 animate-pulse bg-white opacity-70" />
-        <div className="absolute top-[25%] right-48 w-[150px] h-[200px] sm:w-[250px] sm:h-[250px] rounded-full blur-[200px] pointer-events-none z-0 animate-bounce bg-blue-600 opacity-60" />
-        <div className="absolute top-[35%] right-48 w-[100px] h-[150px] sm:w-[150px] sm:h-[200px] rounded-full blur-[200px] pointer-events-none z-0 animate-ping bg-violet-500 opacity-50" />
+       
+        <div className="relative flex w-full h-[200px] sm:h-[700px] max-w-screen-xl  ml-40 justify-start overflow-hidden">
+          <IconCloud images={images} />
+         <div className="items-start justify-center flex flex-col absolute top-0 left-100 ml-70 w-full h-full z-10 text-left px-4">
+   <h2 className="text-2xl sm:text-3xl font-bold mb-3">Tech Stack</h2>
 
-        <div className="relative flex w-full h-[200px] sm:h-[700px] max-w-screen-xl mr-5 ml-auto justify-end overflow-hidden">
-            <IconCloud images={images} />
+  <p className="text-sm sm:text-base text-gray-300 max-w-xl">
+    This globe shows all the technologies I’ve earned and learned along the way. For building frontend apps, I work with <span className="font-semibold text-white">React</span>, <span className="font-semibold text-white">JavaScript</span>, <span className="font-semibold text-white">TypeScript</span>, <span className="font-semibold text-white">HTML5</span>, <span className="font-semibold text-white">CSS3</span>, and <span className="font-semibold text-white">Tailwind CSS</span>. I deploy and manage code with <span className="font-semibold text-white">Vercel</span>, <span className="font-semibold text-white">Git</span>, and <span className="font-semibold text-white">GitHub</span>.
+  </p>
+
+  <br />
+
+  <p className="text-sm sm:text-base text-gray-300 max-w-xl">
+    On the backend and automation side, I’ve gained experience with <span className="font-semibold text-white">PHP</span>, <span className="font-semibold text-white">MySQL</span>, <span className="font-semibold text-white">phpMyAdmin</span>, <span className="font-semibold text-white">XAMPP</span>, and <span className="font-semibold text-white">Docker</span>, and I automate workflows using <span className="font-semibold text-white">n8n</span>.
+  </p>
+
+  <br />
+
+  <p className="text-sm sm:text-base text-gray-300 max-w-xl">
+    For design, content creation, and other tools, I use <span className="font-semibold text-white">Figma</span>, <span className="font-semibold text-white">Audacity</span>, <span className="font-semibold text-white">WordPress</span>, <span className="font-semibold text-white">Wix</span>, and <span className="font-semibold text-white">Codesandbox</span>. I also explore AI tools like <span className="font-semibold text-white">Google Gemini</span> to keep growing and innovating.
+  </p>
+</div>
+
         </div>
+        
         
 </section>
     );  
