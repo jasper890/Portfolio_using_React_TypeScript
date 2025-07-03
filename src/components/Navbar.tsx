@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,8 @@ const Navbar: React.FC = () => {
                 : 'bg-transparent'
         }`}>
 
-            <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
+        <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
+             <Link to="/">
                 <span 
                     className="inline-block font-black tracking-tight italic"
                     style={{ 
@@ -63,7 +65,8 @@ const Navbar: React.FC = () => {
                     }}
                 >
                     DEV
-                </span>
+            </span>
+          </Link>
             </div>
            <ul className="flex space-x-4">
   <li>
@@ -71,7 +74,7 @@ const Navbar: React.FC = () => {
       href="#about" 
       className="text-lg text-white hover:text-cyan-400 text-glow-cyan transition-all duration-300"
     >
-      About
+      <Link to="/about">About</Link>
     </a>
   </li>
   <li>
