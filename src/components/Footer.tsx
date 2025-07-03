@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className=" bottom-0 left-0 right-0 z-10 relative overflow-hidden">
+    <footer className=" bottom-0 left-0 right-0 z-10 relative overflow-hidden overflow-x-hidden">
       {/* Background with edge lighting effects */}
       <div className="absolute inset-0 bg-black">
         {/* Left edge light */}

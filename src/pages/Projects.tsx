@@ -59,12 +59,12 @@ const Projects: React.FC = () => {
     : projects.filter(project => project.tags.includes(filter));
 
   return (
-      <section id="projects" className="py-20 bg-transparent text-white">
+      <section id="projects" className="py-20 bg-transparent text-white overflow-x-hidden">
  <div className="absolute top-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-purple-700 opacity-70" />
-      <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
+      <div className="absolute top-0 right-20    w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
  <div className="absolute bottom-0 right-1/2 w-[250px] h-[150px] sm:w-[200px] sm:h-[250px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
           <div className="w-20 h-1 bg-indigo-500 mx-auto"></div>
