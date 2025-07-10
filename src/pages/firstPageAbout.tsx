@@ -35,7 +35,7 @@ const slugs = [
   "html5",
   "css3",
     "vercel/white",
-    "audacity",
+    "audacity/white",
     "googlegemini",
     "php",
     "phpmyadmin",
