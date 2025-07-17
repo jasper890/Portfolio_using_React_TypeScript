@@ -30,7 +30,7 @@ import ScrollFloat from "../components/magicui/reactbit/ScrollFloat.tsx";
   scrollEnd="bottom bottom-=10%"
   stagger={0.03}
   containerClassName="flex items-center justify-center h-screen w-full"
-  textClassName="text-center font-bold leading-none text-white text-[250px] md:text-[50px] lg:text-[150px]"
+  textClassName="text-center font-bold leading-none text-white text-[100px] sm:text-[100px] md:text-[150px] lg:text-[210px]"
 >
  Tech Gear
 </ScrollFloat>
