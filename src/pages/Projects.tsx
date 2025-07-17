@@ -32,24 +32,16 @@ const projects: Project[] = [
     liveUrl: '#',
     githubUrl: '#',
   },
+ 
   {
     id: 3,
-    title: 'Real-time Chat Application',
-    description: 'A messaging platform with real-time updates, user presence indicators, and file sharing.',
-    image: 'https://images.pexels.com/photos/4126743/pexels-photo-4126743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    tags: ['React', 'Socket.io', 'Express', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    id: 4,
     title: 'Renalink Nephrology Center Website',
     description: 'An analytics dashboard for tracking financial data with interactive charts and reports.',
     image: Renalink,
     tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP','MYSQL','Git','ChatBot'],
     liveUrl: '#',
     githubUrl: '#',
-  },
+  }
 ];
 
 const Projects: React.FC = () => {
