@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,7 @@ const Navbar: React.FC = () => {
         }`}>
 
         <div className="text-white leading-none " style={{ fontSize: '3.2rem', letterSpacing: '-0.02em' }}>
-             <Link to="/">
+             <NavLink to="/">
                 <span 
                     className="inline-block font-black tracking-tight italic"
                     style={{ 
@@ -66,34 +67,103 @@ const Navbar: React.FC = () => {
                 >
                     DEV
             </span>
-          </Link>
+          </NavLink>
             </div>
-           <ul className="flex space-x-4">
+   <ul className="flex space-x-4">
   <li>
-    <a 
-      href="#about" 
-      className="text-lg text-white hover:text-cyan-400 text-glow-cyan transition-all duration-300"
+    <NavLink
+      to="/"
+      className={({ isActive }) =>
+        `text-lg text-white transition-all duration-300 relative group ${
+          isActive ? 'text-violet-400' : 'hover:text-violet-400'
+        }`
+      }
     >
-      <Link to="/about">About</Link>
-    </a>
+      {({ isActive }) => (
+        <>
+          Home
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
+              isActive
+                ? 'w-full bg-violet-400'
+                : 'w-0 bg-violet-400 group-hover:w-full'
+            }`}
+          />
+        </>
+      )}
+    </NavLink>
   </li>
   <li>
-    <a 
-      href="#projects" 
-      className="text-lg text-white hover:text-amber-300 text-glow-amber transition-all duration-300"
+    <NavLink
+      to="/about"
+      className={({ isActive }) =>
+        `text-lg text-white transition-all duration-300 relative group ${
+          isActive ? 'text-cyan-400' : 'hover:text-cyan-400'
+        }`
+      }
     >
-      <Link to="/projects">Projects</Link>
-    </a>
+      {({ isActive }) => (
+        <>
+          About
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
+              isActive
+                ? 'w-full bg-cyan-400'
+                : 'w-0 bg-cyan-400 group-hover:w-full'
+            }`}
+          />
+        </>
+      )}
+    </NavLink>
   </li>
   <li>
-    <a 
-      href="#contact" 
-      className="text-lg text-white hover:text-lime-300 text-glow-lime transition-all duration-300"
+    <NavLink
+      to="/projects"
+      className={({ isActive }) =>
+        `text-lg text-white transition-all duration-300 relative group ${
+          isActive ? 'text-amber-300' : 'hover:text-amber-300'
+        }`
+      }
     >
-      Contact
-    </a>
+      {({ isActive }) => (
+        <>
+          Projects
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
+              isActive
+                ? 'w-full bg-amber-300'
+                : 'w-0 bg-amber-300 group-hover:w-full'
+            }`}
+          />
+        </>
+      )}
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/contact"
+      className={({ isActive }) =>
+        `text-lg text-white transition-all duration-300 relative group ${
+          isActive ? 'text-lime-300' : 'hover:text-lime-300'
+        }`
+      }
+    >
+      {({ isActive }) => (
+        <>
+          Contact
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
+              isActive
+                ? 'w-full bg-lime-300'
+                : 'w-0 bg-lime-300 group-hover:w-full'
+            }`}
+          />
+        </>
+      )}
+    </NavLink>
   </li>
 </ul>
+
 
         </nav>
     );

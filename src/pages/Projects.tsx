@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {  Github } from 'lucide-react';
-
+import PowerApps from '../assets/POWERAPPS_ATTENDANCE.png'
+import MonitoringSystem from '../assets/monitoringsystem.png'
+import Renalink from '../assets/Renalink_Nephrology-1.png'
 interface Project {
   id: number;
   title: string;
@@ -16,8 +18,8 @@ const projects: Project[] = [
     id: 1,
     title: 'E-Commerce Platform',
     description: 'A full-featured online store with shopping cart, user authentication, and payment processing.',
-    image: 'https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    image: PowerApps,
+    tags: ['PowerApps', 'PowerFx'],
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -25,8 +27,8 @@ const projects: Project[] = [
     id: 2,
     title: 'Task Management App',
     description: 'A productivity app for organizing tasks with drag-and-drop functionality and team collaboration.',
-    image: 'https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    tags: ['React', 'TypeScript', 'Firebase', 'Tailwind'],
+    image: MonitoringSystem,
+    tags: ['Java', 'GUI'],
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -41,10 +43,10 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Finance Dashboard',
+    title: 'Renalink Nephrology Center Website',
     description: 'An analytics dashboard for tracking financial data with interactive charts and reports.',
-    image: 'https://images.pexels.com/photos/7567434/pexels-photo-7567434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    tags: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
+    image: Renalink,
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP','MYSQL','Git','ChatBot'],
     liveUrl: '#',
     githubUrl: '#',
   },
