@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TiltedCard from '../components/magicui/reactbit/TiltedCard.tsx';
 import personalProfile from "../assets/portfoliopic.png";
 import { HyperText } from '../components/magicui/hyper-text.tsx';
@@ -49,7 +49,7 @@ const AbountSecond = () => {
           displayOverlayContent={true}
           overlayContent={
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <InteractiveHoverButton className="text-black mt-67 ml-13 text-sm  border-4 border-white shadow-lg shadow-white/40 transition-transform duration-200 active:scale-95 md:mt-102 md:ml-30 md:text-xl">
+              <InteractiveHoverButton className="text-black mt-67 ml-1 text-sm  border-4 border-white shadow-lg shadow-white/40 transition-transform duration-200 active:scale-95 md:mt-102 md:ml-30 md:text-xl">
                 Download Resume
               </InteractiveHoverButton>
             </a>
