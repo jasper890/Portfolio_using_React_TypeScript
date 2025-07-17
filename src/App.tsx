@@ -9,7 +9,7 @@ function App() {
  
   return (
     <>
-    <Analytics />
+   
      <Router>
       <Layout>
         <Routes>
@@ -18,7 +18,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
         </Routes>
         </Layout>
-      
+       <Analytics />
     </Router>
     </>
   )
