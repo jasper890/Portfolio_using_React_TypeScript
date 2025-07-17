@@ -16,8 +16,8 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store with shopping cart, user authentication, and payment processing.',
+    title: 'PowerApps Attendance System',
+    description: 'A system built with PowerApps for tracking attendance and managing student records.',
     image: PowerApps,
     tags: ['PowerApps', 'PowerFx'],
     liveUrl: '#',
@@ -25,8 +25,8 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A productivity app for organizing tasks with drag-and-drop functionality and team collaboration.',
+    title: 'Student Monitoring System',
+    description: 'A simple tool to track student info, status, and total units. Includes add, edit, delete, search, and section organization features. ',
     image: MonitoringSystem,
     tags: ['Java', 'GUI'],
     liveUrl: '#',
