@@ -39,31 +39,31 @@ const texts = [
                 &gt; booting jasperNgo.dev --env=production
               </TypingAnimation>
 
-              <AnimatedSpan delay={1200} className="text-green-400 animate-pulse">
+              <AnimatedSpan delay={1200} className="text-green-400 animate-pulse text-[10px] md:text-sm ">
                 <span>✔ Identity loaded: "Jasper Ryan Ngo - Quiet Builder"</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={1700} className="text-green-400 animate-fade-in">
-                <span>✔ Found tech stack: React, TypeScript, Tailwind, ShadCN UI</span>
+              <AnimatedSpan delay={1700} className="text-green-400 animate-fade-in text-[10px] md:text-sm">
+                <span>✔ Found tech stack: React, TypeScript, Tailwind.</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={2200} className="text-green-400 animate-fade-in">
+              <AnimatedSpan delay={2200} className="text-green-400 animate-fade-in text-[10px] md:text-sm">
                 <span>✔ UI Framework detected: Minimal & Clean mode</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={2700} className="text-green-400 animate-fade-in">
+              <AnimatedSpan delay={2700} className="text-green-400 animate-fade-in text-[10px] md:text-sm">
                 <span>✔ Connected to: AI, Chatbot, and Workflow Systems</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={3200} className="text-green-400 animate-fade-in">
+              <AnimatedSpan delay={3200} className="text-green-400 animate-fade-in text-[10px] md:text-sm">
                 <span>✔ Importing real projects and personal branding</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={3700} className="text-green-400 animate-fade-in">
+              <AnimatedSpan delay={3700} className="text-green-400 animate-fade-in text-[10px] md:text-sm">
                 <span>✔ Linked: GitHub, Resume, Contact</span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={4200} className="text-red-400 animate-fade-in">
+              <AnimatedSpan delay={4200} className="text-red-400 animate-fade-in text-[10px] md:text-sm">
                 <span>
                   ⚠️ Best viewed on desktop. Check out my GitHub:&nbsp;
                   <a
@@ -77,15 +77,15 @@ const texts = [
                 </span>
               </AnimatedSpan>
 
-              <AnimatedSpan delay={4700} className="text-blue-400 animate-fade-in">
+              <AnimatedSpan delay={4700} className="text-blue-400 animate-fade-in text-[10px] md:text-sm">
                 <span>ℹ Current status: Always learning. Always building.</span>
               </AnimatedSpan>
 
-              <TypingAnimation delay={6200} className="text-muted-foreground">
+              <TypingAnimation delay={6200} className="text-muted-foreground text-[10px] md:text-sm">
                 Success! Welcome to my digital space 🧠✨
               </TypingAnimation>
 
-              <TypingAnimation delay={7200} className="text-muted-foreground">
+              <TypingAnimation delay={7200} className="text-muted-foreground text-[10px] md:text-sm">
                 Scroll down to explore who I am and what I make.
               </TypingAnimation>
             </Terminal>
@@ -95,7 +95,7 @@ const texts = [
         {/* Right Column - Text Animation */}
         <div className="text-white text-3xl flex flex-col justify-center lg:justify-start space-y-6">
          <div className="text-[3.5rem] font-black flex flex-wrap items-center space-x-2">
-  <TextAnimate animation="blurInUp" by="word" delay={1}>
+  <TextAnimate animation="blurInUp" by="word" delay={1} className="  text-2xl md:text-[3.5rem]">
     &gt; About This
   </TextAnimate>
   <span className="inline-block -mb-10 opacity-0 animate-[fadeIn_0.5s_ease-in-out_1.5s_forwards]">
