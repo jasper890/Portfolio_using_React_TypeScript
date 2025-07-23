@@ -18,7 +18,7 @@ const educationData = [
   {
     id: 1,
     degree: 'Bachelor of Science in Information Technology',
-    institution: 'Pamantasan Lungsod ng Valenzuela',
+    institution: 'Pamantasan ng Lungsod ng Valenzuela',
     duration: '2023- Present',
   },
   {
