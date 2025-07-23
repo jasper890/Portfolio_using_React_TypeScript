@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
           <Helmet>
         <title>Contact</title>
         <meta name="description" content="Get in touch with us on the Contact page." />
-        <link rel="icon" href="favicons/phone.png" />
+        <link rel="icon" href="/favicons/phone.png" />
         <meta name="theme-color" content="#181a24" />
       </Helmet>
       <section id="contact" className="min-h-screen bg-black text-white relative overflow-hidden">
