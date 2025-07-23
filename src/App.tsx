@@ -6,12 +6,14 @@ import Home from './pages/Home.tsx';
 import About from './pages/About.tsx';
 import Projects from './pages/Projects.tsx';
 import Contact from './pages/Contact.tsx';
+import ScrollToTop from './pages/ScrollToTop.tsx';
 function App() {
  
   return (
     <>
    
-     <Router>
+      <Router>
+      <ScrollToTop /> 
       <Layout>
         <Routes>
             <Route path="/" element={<Home />} />

@@ -3,13 +3,14 @@ import { motion, useAnimation, useInView, type Variants } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 
 const experienceData = [
-  {
-    id: 1,
-    role: 'Digital and AI Intern',
-    company: 'Devonshire Wessex',
-    duration: 'June 2025 - Present',
-    description: 'Worked on AI-driven projects and assisted in digital transformation initiatives.',
-  },
+ {
+  id: 1,
+  role: 'Digital and AI Intern',
+  company: 'Devonshire Wessex',
+  duration: 'June 2025 - Present',
+  description: 'Focused on building, integrating, and training intelligent AI chatbots tailored to website content and user behavior, enhancing digital interaction and delivering contextual, human-like responses.',
+}
+
   
 ];
 
