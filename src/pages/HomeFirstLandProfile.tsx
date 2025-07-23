@@ -20,7 +20,7 @@ const HomeFirstLandProfile = () => {
           </div>
 
           {/* Text Section - Mobile: Bottom, Desktop: Right */}
-          <div className="flex flex-col justify-start md:justify-center items-start space-y-6 order-2 md:order-2 text-center md:text-left mt-8 md:mt-0 z-15">
+          <div className="flex flex-col justify-start md:justify-center items-start space-y-6 order-2 md:order-2 text-center md:text-left mt-8 md:mt-0 z-15 px-7 md:px-0">
             <BoxReveal boxColor={"#14b8a6"} duration={0.5}>
               <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 Hi, I'm Jasper<span className="text-[#22d3ee]">.</span>
@@ -34,14 +34,13 @@ const HomeFirstLandProfile = () => {
             </BoxReveal>
 
             <BoxReveal boxColor={"#22d3ee"} duration={0.5}>
-              <div className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg">
+              <div className="text-gray-400 text-sm text-left sm:text-base md:text-lg leading-relaxed max-w-lg">
                 <p>
-  I build clean, efficient web apps using React, TypeScript, and Tailwind CSS.<br className="hidden sm:block" />
-  Always learning and focused on smooth, minimalist user experiences.<br className="hidden sm:block" />
-  Experienced in AI chatbots, workflows, and intuitive UIs.<br className="hidden sm:block" />
-  I quietly refine my craft and build with intention and clarity.
-</p>
-
+                  I build clean, efficient web apps using React, TypeScript, and Tailwind CSS.<br className="hidden sm:block" />
+                  Always learning and focused on smooth, minimalist user experiences.<br className="hidden sm:block" />
+                  Experienced in AI chatbots, workflows, and intuitive UIs.<br className="hidden sm:block" />
+                  I quietly refine my craft and build with intention and clarity.
+                </p>
               </div>
             </BoxReveal>
           </div>

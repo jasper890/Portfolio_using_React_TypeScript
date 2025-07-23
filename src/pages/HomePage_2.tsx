@@ -103,8 +103,8 @@ const texts = [
   </span>
 </div>
 
-          <div className="font-mono font-light leading-snug text-[20px] ">
-            <TextAnimate animation="blurInUp" by="character" delay={1.5}>
+          <div className="font-mono font-light leading-snug text-[10px] sm:text-[20px] ">
+            <TextAnimate animation="blurInUp" by="word" delay={1.5}>
   I’m a quiet builder who enjoys crafting simple, useful  tools through code. Technology is my space to think,    create, and grow. If you’d like to work with me or talk about a project, feel free to reach out to me.          I’m always open to meaningful collaborations.
 </TextAnimate>
 
