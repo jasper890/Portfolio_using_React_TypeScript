@@ -69,10 +69,10 @@ export default function Footer() {
                 href="https://github.com/jasper890" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative group text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-110 p-2 rounded-full border border-white/5 bg-white/2 backdrop-blur-sm hover:bg-white/5 hover:border-white/10"
-                aria-label="GitHub"
+                className="relative group text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-110 p-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/20"
+                aria-label="Github"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Github className="relative z-10 w-5 h-5 md:w-6 md:h-6 drop-shadow-lg" />
               </a>
               <a 
