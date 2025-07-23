@@ -32,8 +32,11 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen bg-black text-white relative overflow-hidden">
+      <div className="absolute top-52 left-2 w-[190px] h-[190px] sm:w-[290px] sm:h-[290px] rounded-full blur-[180px] bg-cyan-500 opacity-70 z-10 animate-float-glow" />
+      <div className="absolute top-32 -right-27 w-[140px] h-[140px] sm:w-[240px] sm:h-[240px] rounded-full blur-[150px] bg-cyan-500 opacity-70 z-10 animate-float-glow" />
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-5 pointer-events-none z-18">
         <div
           className="absolute inset-0"
           style={{
@@ -43,7 +46,7 @@ const Contact: React.FC = () => {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-18 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pt-20 pb-20">
           {/* Header Section */}
           <div className="text-center mb-20">

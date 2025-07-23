@@ -3,6 +3,7 @@
   import Particles from "../components/magicui/reactbit/Particles.tsx";
   import AbountSecond from "./AbountSecond.tsx";
 import ScrollFloat from "../components/magicui/reactbit/ScrollFloat.tsx";
+import  Experience from "./Experience.tsx";
 
   const About = () => {
     return (
@@ -35,7 +36,7 @@ import ScrollFloat from "../components/magicui/reactbit/ScrollFloat.tsx";
  Tech Gear
 </ScrollFloat>
         <FirstPageAbout />
-    
+    <Experience />
       </div>
     )
   }

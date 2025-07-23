@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import {  Github } from 'lucide-react';
 import PowerApps from '../assets/POWERAPPS_ATTENDANCE.png'
 import MonitoringSystem from '../assets/monitoringsystem.png'
-import Renalink from '../assets/Renalink_Nephrology-1.png'
+import Renalink from '../assets/Renalink_min.png'
+import Certifications from './Certifications';
+import n8nWorkflow from '../assets/n8n.png';
 interface Project {
   id: number;
   title: string;
@@ -35,10 +37,19 @@ const projects: Project[] = [
  
   {
     id: 3,
-    title: 'Renalink Nephrology Center Website',
-    description: 'An analytics dashboard for tracking financial data with interactive charts and reports.',
+    title: 'Nephrology Center Website',
+    description: 'A nephrology center website with appointment scheduling that emails patients upon approval. Features super admin and admin roles, plus an integrated chatbot powered by Gemini API for site information. Built with HTML5, CSS3, JavaScript, PHP, MySQL, and chatbot technology.',
     image: Renalink,
     tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP','MYSQL','Git','ChatBot'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    id: 4,
+    title: 'Automated Facebook Content & Image Creation Using AI',
+    description: 'AI creates content and images from your topic and posts them instantly to your Facebook Page.',
+    image: n8nWorkflow,
+    tags: ['n8n','AI','Automation','Docker'],
     liveUrl: '#',
     githubUrl: '#',
   }
@@ -140,6 +151,7 @@ const Projects: React.FC = () => {
           ))}
         </div>
       </div>
+      <Certifications />
     </section>
   );
 };
