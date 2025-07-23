@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Send, Mail,  MapPin, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
 const Contact: React.FC = () => {
@@ -95,18 +95,7 @@ const Contact: React.FC = () => {
                     </div>
                   </a>
 
-                  <a href="tel:+639612000696" className="group block">
-                    <div className="flex items-center space-x-4 p-4 rounded-lg border border-gray-800 hover:border-white transition-all duration-300">
-                      <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
-                        <Phone size={20} />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-400 font-mono">Phone</p>
-                        <p className="text-white font-medium">+63 961 2000 696</p>
-                      </div>
-                      <ArrowRight size={16} className="ml-auto text-gray-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                  </a>
+                  
 
                   <a href="https://www.google.com/maps/place/Valenzuela,+Metro+Manila,+Philippines" target="_blank" rel="noopener noreferrer" className="group block">
                     <div className="flex items-center space-x-4 p-4 rounded-lg border border-gray-800 hover:border-white transition-all duration-300">
