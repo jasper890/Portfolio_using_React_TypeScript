@@ -28,7 +28,7 @@ export default function Footer() {
                   className="inline-block font-black tracking-tight italic drop-shadow-lg"
                   style={{ 
                     fontFamily: '"Open Sans", sans-serif',
-                    fontWeight: 800,
+                    fontWeight: 900,
                     fontStyle: 'italic',
                     color: 'white',
                     textShadow: '0 0 20px rgba(255,255,255,0.3)'

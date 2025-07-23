@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           style={{ letterSpacing: '-0.02em' }}
         >
           <NavLink to="/" onClick={closeMenu}>
-            <span className="inline-block font-black italic" style={{ fontFamily: '"Open Sans", sans-serif' }}>JRN</span>
+            <span className="inline-block font-black italic " style={{ fontFamily: '"Open Sans", sans-serif' }}>JRN</span>
             <span className="inline-block mx-1 font-thin" style={{ fontFamily: 'Roboto, sans-serif' }}>|</span>
             <span className="inline-block font-thin italic" style={{ fontFamily: 'Roboto, sans-serif' }}>DEV</span>
           </NavLink>
