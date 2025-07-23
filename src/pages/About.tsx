@@ -3,13 +3,23 @@
   import Particles from "../components/magicui/reactbit/Particles.tsx";
   import AbountSecond from "./AbountSecond.tsx";
 import ScrollFloat from "../components/magicui/reactbit/ScrollFloat.tsx";
-import  Experience from "./Experience.tsx";
+import Experience from "./Experience.tsx";
+import { Helmet } from 'react-helmet';
 
   const About = () => {
     return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-        {/* Background Particles */}
-        <div className="absolute inset-0 -z-10 pointer-events-none" >
+
+      <> 
+          <Helmet>
+        <title>About JRN</title>
+        <meta name="description" content="Learn more about us on the About page." />
+          <link rel="icon" href="/favicons/userIcon.png" />
+          <meta name="theme-color" content="#181a24" />
+        </Helmet>
+        
+        <div className="relative min-h-screen w-full overflow-hidden">
+          {/* Background Particles */}
+          <div className="absolute inset-0 -z-10 pointer-events-none">
           <Particles
             particleColors={["#3B82F6", "#2563EB", "#1D4ED8"]}
             particleCount={400}
@@ -37,7 +47,8 @@ import  Experience from "./Experience.tsx";
 </ScrollFloat>
         <FirstPageAbout />
     <Experience />
-      </div>
+        </div>
+      </>
     )
   }
 

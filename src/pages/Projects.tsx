@@ -5,6 +5,7 @@ import MonitoringSystem from '../assets/monitoringsystem.png'
 import Renalink from '../assets/Renalink_min.png'
 import Certifications from './Certifications';
 import n8nWorkflow from '../assets/n8n.png';
+import { Helmet } from 'react-helmet';
 interface Project {
   id: number;
   title: string;
@@ -64,6 +65,13 @@ const Projects: React.FC = () => {
     : projects.filter(project => project.tags.includes(filter));
 
   return (
+    <>
+      <Helmet>
+        <title>Contact</title>
+        <meta name="description" content="Get in touch with us on the Contact page." />
+        <link rel="icon" href="/favicons/project.png" />
+        <meta name="theme-color" content="#181a24" />
+      </Helmet>
       <section id="projects" className="py-20 bg-transparent text-white overflow-x-hidden">
  <div className="absolute top-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-purple-700 opacity-70" />
       <div className="absolute top-0 right-20    w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
@@ -152,7 +160,8 @@ const Projects: React.FC = () => {
         </div>
       </div>
       <Certifications />
-    </section>
+      </section>
+    </>
   );
 };
 

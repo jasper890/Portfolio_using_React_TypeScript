@@ -1,5 +1,6 @@
 import React from 'react';
 import { Send, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,7 +32,14 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-black text-white relative overflow-hidden">
+    <>
+          <Helmet>
+        <title>Contact</title>
+        <meta name="description" content="Get in touch with us on the Contact page." />
+        <link rel="icon" href="favicons/phone.png" />
+        <meta name="theme-color" content="#181a24" />
+      </Helmet>
+      <section id="contact" className="min-h-screen bg-black text-white relative overflow-hidden">
       <div className="absolute top-52 left-2 w-[190px] h-[190px] sm:w-[290px] sm:h-[290px] rounded-full blur-[180px] bg-cyan-500 opacity-70 z-10 animate-float-glow" />
       <div className="absolute top-32 -right-27 w-[140px] h-[140px] sm:w-[240px] sm:h-[240px] rounded-full blur-[150px] bg-cyan-500 opacity-70 z-10 animate-float-glow" />
 
@@ -220,7 +228,8 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
