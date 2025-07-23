@@ -25,8 +25,8 @@ const texts = [
   return (
     <section className="relative bg-black text-black min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-16 overflow-hidden">
       {/* Glow effects */}
-      <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-purple-700 opacity-70" />
-      <div className="absolute bottom-0 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] rounded-full blur-[160px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
+      <div className="absolute bottom-30 left-0 w-[220px] h-[220px] sm:w-[330px] sm:h-[330px] rounded-full blur-[140px] pointer-events-none z-0 animate-float-glow bg-purple-700 opacity-70" />
+      <div className="absolute bottom-30 right-0 w-[220px] h-[220px] sm:w-[330px] sm:h-[330px] rounded-full blur-[140px] pointer-events-none z-0 animate-float-glow bg-indigo-600 opacity-70" />
 
       {/* Two Column Layout */}
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

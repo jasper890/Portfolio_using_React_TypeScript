@@ -5,15 +5,7 @@ export default function Footer() {
   return (
     <footer className=" bottom-0 left-0 right-0 z-10 relative overflow-hidden overflow-x-hidden">
       {/* Background with edge lighting effects */}
-      <div className="absolute inset-0 bg-black">
-        {/* Left edge light */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-blue-400/30 via-cyan-300/20 to-transparent blur-xl"></div>
-        {/* Right edge light */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-purple-400/30 via-pink-300/20 to-transparent blur-xl"></div>
-        {/* Additional ambient glow */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/10 to-transparent"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/10 to-transparent"></div>
-      </div>
+   
       
       {/* Glassmorphism overlay */}
       <div className="absolute inset-0 bg-black/20 backdrop-blur-2xl border-t border-white/5"></div>
