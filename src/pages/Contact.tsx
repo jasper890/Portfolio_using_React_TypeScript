@@ -2,14 +2,45 @@ import React from 'react';
 import { Send, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ngojasperryan@gmail.com', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success === 'true') {
+        alert('✅ Message sent successfully!');
+        form.reset();
+      } else {
+        alert('❌ Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('⚠️ Network error. Please try again later.');
+    }
+  };
+
   return (
     <section id="contact" className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+            backgroundSize: '40px 40px',
+          }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,16 +66,12 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-8 tracking-tight">Get In Touch</h3>
                   <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Whether you have a question or just want to say hello, I'll do my best to get back to you.
+                    I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hello, I'll do my best to get back to you.
                   </p>
                 </div>
 
                 <div className="space-y-8">
-                  <a
-                    href="mailto:ngojasperryan@gmail.com?subject=Hello!&body=Hi Jasper,"
-                    className="group block"
-                  >
+                  <a href="mailto:ngojasperryan@gmail.com" className="group block">
                     <div className="flex items-center space-x-4 p-4 rounded-lg border border-gray-800 hover:border-white transition-all duration-300">
                       <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
                         <Mail size={20} />
@@ -57,10 +84,7 @@ const Contact: React.FC = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="tel:+639612000696"
-                    className="group block"
-                  >
+                  <a href="tel:+639612000696" className="group block">
                     <div className="flex items-center space-x-4 p-4 rounded-lg border border-gray-800 hover:border-white transition-all duration-300">
                       <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
                         <Phone size={20} />
@@ -73,12 +97,7 @@ const Contact: React.FC = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="https://www.google.com/maps/place/Valenzuela,+Metro+Manila,+Philippines"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block"
-                  >
+                  <a href="https://www.google.com/maps/place/Valenzuela,+Metro+Manila,+Philippines" target="_blank" rel="noopener noreferrer" className="group block">
                     <div className="flex items-center space-x-4 p-4 rounded-lg border border-gray-800 hover:border-white transition-all duration-300">
                       <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
                         <MapPin size={20} />
@@ -91,54 +110,15 @@ const Contact: React.FC = () => {
                     </div>
                   </a>
                 </div>
-
-                <div className="pt-8 border-t border-gray-800">
-                  <h4 className="text-sm font-mono text-gray-400 uppercase tracking-wider mb-6">Connect</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <a
-                      href="https://github.com/jasper890"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-3 rounded-lg border border-gray-800 hover:border-white transition-all duration-300"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
-                        {/* GitHub Icon */}
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504..." clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium">GitHub</span>
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/jasper-ryan-ngo/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-3 rounded-lg border border-gray-800 hover:border-white transition-all duration-300"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
-                        {/* LinkedIn Icon */}
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569...z" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium">LinkedIn</span>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <div className="border border-gray-800 rounded-2xl p-8 bg-white/[0.02] backdrop-blur-sm">
-                <form
-                  action="https://formsubmit.co/ngojasperryan@gmail.com"
-                  method="POST"
-                  className="space-y-6"
-                >
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_next" value="https://jrndev.vercel.app/contact" />
 
                   <div className="mb-8">
                     <h3 className="text-2xl font-bold mb-2 tracking-tight">Send a Message</h3>
@@ -147,7 +127,7 @@ const Contact: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Name</label>
+                      <label className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Name</label>
                       <input
                         type="text"
                         name="name"
@@ -158,7 +138,7 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Email</label>
+                      <label className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Email</label>
                       <input
                         type="email"
                         name="email"
@@ -170,7 +150,7 @@ const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Subject</label>
+                    <label className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Subject</label>
                     <input
                       type="text"
                       name="subject"
@@ -181,7 +161,7 @@ const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Message</label>
+                    <label className="block text-sm font-mono text-gray-400 uppercase tracking-wider mb-3">Message</label>
                     <textarea
                       name="message"
                       rows={6}
