@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import UdemyWeb from '../assets/udemyCertiResponsiveWebhtmljs.jpg';
 import UdemyDesign from '../assets/udemy_certiWebDesign.jpg';
+import DICT from '../assets/dictJpeg.jpg';
+import DICTBage from '../assets/CiscoBage.jpg';
 
 type Certification = {
   id: number;
@@ -21,6 +23,18 @@ const certifications: Certification[] = [
     title: 'Web Design Principles',
     issuer: 'Udemy',
     image: UdemyDesign,
+  },
+  {
+    id: 3,
+    title: 'JavaScript Essentials 1 completed',
+    issuer: 'DICT',
+    image: DICT,
+  },
+  {
+    id: 4,
+    title: 'Cisco Networking Basics',
+    issuer: 'Cisco Badge',
+    image: DICTBage,
   },
 ];
 
